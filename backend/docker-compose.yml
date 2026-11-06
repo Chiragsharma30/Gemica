@@ -1,0 +1,12 @@
+# Local MongoDB for development: `npm run db:up`
+services:
+  mongo:
+    image: mongo:7
+    container_name: gemica-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - gemica-mongo-data:/data/db
+volumes:
+  gemica-mongo-data:
